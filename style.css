@@ -1,5 +1,8 @@
 :root {
+  --purple: #8a70da;
   --bg-color: #03001c;
+  --bg-color-opacity-6: #03001c99;
+  --df-text: #eee;
   --ft-inter: 'Inter', sans-serif;
   --ft-lato: 'Lato', sans-serif;
   --ft-raleway: 'Raleway', sans-serif;
@@ -11,8 +14,73 @@
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: var(--bg-color);
+  color: var(--df-text);
   font-family: var(--ft-inter);
   width: 100vw;
 }
+
+a {
+  color: var(--df-text);
+  text-decoration: none;
+}
+
+.header-blur {
+  background-color: var(--bg-color-opacity-6);
+  backdrop-filter: blur(27px);
+  border-radius: 0 0 6px 6px;
+  height: 90px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 40;
+}
+
+.header {
+  height: 90px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 50;
+}
+
+.header-content {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  margin-inline: auto;
+  max-width: 1200px;
+  position: relative;
+  width: 100%;
+}
+
+.page-logo {
+  align-items: center;
+  display: flex;
+  font-family: var(--ft-raleway);
+  font-size: 2rem;
+  font-weight: 900;
+  height: 100%;
+  left: 0;
+  position: absolute;
+}
+
+.header-menu ul {
+  display: flex;
+  font-size: 1rem;
+  gap: 40px;
+  height: 100%;
+  list-style: none;
+}
+
+.header-menu ul a:hover {
+  color: var(--purple);
+}
+
+
