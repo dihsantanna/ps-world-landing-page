@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "lint:style": "npx stylelint **/*.css"
+    "lint:style": "npx stylelint **/*.css --fix"
   },
   "keywords": [],
   "author": {
@@ -13,6 +13,7 @@
   "license": "MIT",
   "devDependencies": {
     "stylelint": "^15.1.0",
-    "stylelint-config-standard": "^30.0.1"
+    "stylelint-config-standard": "^30.0.1",
+    "stylelint-order": "^6.0.2"
   }
 }

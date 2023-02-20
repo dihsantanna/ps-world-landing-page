@@ -1,5 +1,8 @@
+/* stylelint-disable property-no-vendor-prefix */
 :root {
   --purple: #8a70da;
+  --purple-radius: radial-gradient(circle at left, #f9f6ff 0%, #c9bcf1 50%, #8a70da 100%);
+  --purple-radius-2: radial-gradient(circle at left, #a394d2 0%, #5a4696 50%, #211449 100%);
   --bg-color: #03001c;
   --bg-color-opacity-6: #03001c99;
   --df-text: #eee;
@@ -18,11 +21,16 @@ html {
   scroll-behavior: smooth;
 }
 
+:target {
+  scroll-margin-top: 180px;
+}
+
 body {
   background-color: var(--bg-color);
   color: var(--df-text);
   font-family: var(--ft-inter);
-  width: 100vw;
+  height: max-content;
+  overflow-x: hidden;
 }
 
 a {
@@ -30,9 +38,23 @@ a {
   text-decoration: none;
 }
 
+.text-gradient {
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-image: var(--purple-radius);
+  -webkit-text-fill-color: transparent;
+}
+
+.elipse-blur {
+  background-image: var(--purple-radius-2);
+  border-radius: 50%;
+  filter: blur(160px);
+  position: absolute;
+}
+
 .header-blur {
-  background-color: var(--bg-color-opacity-6);
   backdrop-filter: blur(27px);
+  background-color: var(--bg-color-opacity-6);
   border-radius: 0 0 6px 6px;
   height: 90px;
   position: fixed;
@@ -79,8 +101,103 @@ a {
   list-style: none;
 }
 
-.header-menu ul a:hover {
-  color: var(--purple);
+.header-menu ul a {
+  position: relative;
 }
 
+.header-menu ul a:hover::before {
+  animation: marker-menu 0.3s;
+  background-image: var(--purple-radius);
+  border-radius: 6px;
+  bottom: -8px;
+  content: '';
+  height: 4px;
+  left: -4px;
+  position: absolute;
+  width: calc(100% + 8px);
+  z-index: -1;
+}
 
+@keyframes marker-menu {
+  from {
+    transform: scaleX(0);
+  }
+
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.header-menu .menu-active {
+  color: var(--purple);
+  position: relative
+}
+
+main {
+  margin-inline: auto;
+  max-width: 1200px;
+  padding-top: 180px;
+  width: 100%;
+}
+
+.section-1 {
+  align-items: center;
+  display: flex;
+  height: 612px;
+  justify-content: center;
+  width: 100%;
+}
+
+.section-1 .aside-left {
+  height: 80%;
+  position: relative;
+  width: 40%;
+}
+
+.section-1 .aside-left div {
+  position: relative;
+  z-index: 20;
+}
+
+.section-1 .aside-right {
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  width: 60%;
+}
+
+.section-1 h1 {
+  font-family: var(--ft-raleway);
+  font-size: 4.6875rem;
+  font-weight: 900;
+}
+
+.section-1 p {
+  font-family: var(--ft-lato);
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-top: 20px;
+  width: 90%;
+}
+
+.section-1 .aside-right img {
+  margin-right: -50px;
+  z-index: 30;
+}
+
+.main-right-elipse {
+  height: 634px;
+  right: 0;
+  top: 0;
+  transform: rotate(106.5deg);
+  width: 396px;
+}
+
+.main-left-elipse {
+  border: white 1px solid;
+  height: 367px;
+  left: 0;
+  transform: rotate(54deg);
+  width: 215px;
+  z-index: 30;
+}
