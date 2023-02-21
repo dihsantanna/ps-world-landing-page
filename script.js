@@ -3,7 +3,7 @@ const menus = document.querySelectorAll('.header-menu a');
 const activeOnScroll = () => {
   const [home, about, guide, products] = Array.from(menus);
 
-  const homeTop = document.querySelector('#main').scrollHeight;
+  const homeTop = document.querySelector('#home').scrollHeight - 180;
   const aboutTop = document.querySelector('#about').scrollHeight + homeTop;
   const guideTop = document.querySelector('#guide').scrollHeight + aboutTop;
 

@@ -22,7 +22,7 @@ html {
 }
 
 :target {
-  scroll-margin-top: 180px;
+  scroll-margin-top: 120px;
 }
 
 body {
@@ -48,7 +48,7 @@ a {
 .elipse-blur {
   background-image: var(--purple-radius-2);
   border-radius: 50%;
-  filter: blur(160px);
+  filter: blur(150px);
   position: absolute;
 }
 
@@ -136,7 +136,7 @@ a {
 main {
   margin-inline: auto;
   max-width: 1200px;
-  padding-top: 180px;
+  padding-top: 100px;
   width: 100%;
 }
 
@@ -150,6 +150,7 @@ main {
 
 .section-1 .aside-left {
   height: 80%;
+  padding-top: 60px;
   position: relative;
   width: 40%;
 }
@@ -182,10 +183,11 @@ main {
 
 .section-1 .aside-right img {
   margin-right: -50px;
+  transform: scale(0.9);
   z-index: 30;
 }
 
-.main-right-elipse {
+.home-right-elipse {
   height: 634px;
   right: 0;
   top: 0;
@@ -193,11 +195,88 @@ main {
   width: 396px;
 }
 
-.main-left-elipse {
+.home-left-elipse {
   border: white 1px solid;
   height: 367px;
   left: 0;
   transform: rotate(54deg);
   width: 215px;
   z-index: 30;
+}
+
+.section-2 {
+  align-items: center;
+  display: flex;
+  height: 612px;
+  justify-content: center;
+  padding-top: 100px;
+  width: 100%;
+}
+
+.section-2 .aside-left {
+  display: flex;
+  position: relative;
+  width: 50%;
+}
+
+.section-2 .aside-left img {
+  margin-left: -115px;
+  transform: scale(0.9);
+  z-index: 20;
+}
+
+.about-right-elipse {
+  height: 295px;
+  right: -5%;
+  top: 30%;
+  width: 295px;
+}
+
+.section-2 .aside-right {
+  display: flex;
+  height: 100%;
+  justify-content: flex-end;
+  position: relative;
+  width: 50%;
+}
+
+.section-2 .aside-right div {
+  align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  position: relative;
+  z-index: 30;
+}
+
+.section-2 h2 {
+  font-family: var(--ft-raleway);
+  font-size: 4rem;
+  font-weight: 900;
+  text-align: end;
+}
+
+.section-2 p {
+  font-family: var(--ft-lato);
+  font-size: 1.25rem;
+  font-weight: 500;
+  text-align: end;
+  width: 80%;
+}
+
+.section-2 ul {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--ft-lato);
+  font-size: 1.25rem;
+  font-weight: 500;
+  gap: 20px;
+  padding-top: 20px;
+  width: 75%;
+}
+
+.section-2 ul li {
+  align-items: center;
+  display: flex;
+  list-style: none;
 }
