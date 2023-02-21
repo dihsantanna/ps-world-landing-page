@@ -3,35 +3,36 @@ const menus = document.querySelectorAll('.header-menu a');
 const activeOnScroll = () => {
   const [home, about, guide, products] = Array.from(menus);
 
-  const homeTop = document.querySelector('#home').scrollHeight - 180;
-  const aboutTop = document.querySelector('#about').scrollHeight + homeTop;
-  const guideTop = document.querySelector('#guide').scrollHeight + aboutTop;
+  const aboutTop = document.getElementById('about').offsetTop;
+  const guideTop = document.getElementById('guide').offsetTop;
+  const productsTop = document.getElementById('products').offsetTop;
 
-  const scrollY = window.scrollY;
+  const scrollMarginTop = 120;
 
-  if (scrollY < homeTop) {
+  const scrollYPosition = window.scrollY + scrollMarginTop;
+
+  if (scrollYPosition < aboutTop) {
     home.classList.add('menu-active');
     about.classList.remove('menu-active');
     guide.classList.remove('menu-active');
     products.classList.remove('menu-active');
-  } else if (scrollY < aboutTop) {
-    about.classList.add('menu-active');
+  } else if (scrollYPosition < guideTop) {
     home.classList.remove('menu-active');
+    about.classList.add('menu-active');
     guide.classList.remove('menu-active');
     products.classList.remove('menu-active');
-  } else if (scrollY < guideTop) {
-    guide.classList.add('menu-active');
+  } else if (scrollYPosition < productsTop) {
     home.classList.remove('menu-active');
     about.classList.remove('menu-active');
+    guide.classList.add('menu-active');
     products.classList.remove('menu-active');
   } else {
-    products.classList.add('menu-active');
     home.classList.remove('menu-active');
     about.classList.remove('menu-active');
     guide.classList.remove('menu-active');
+    products.classList.add('menu-active');
   }
 
 }
 
-activeOnScroll();
 window.addEventListener('scroll',activeOnScroll);
