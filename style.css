@@ -317,3 +317,116 @@ main {
   width: 692px;
   z-index: 20;
 }
+
+.section-4 {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 250px;
+  position: relative;
+  width: 100%;
+}
+
+.section-4 .product-content {
+  align-items: center;
+  display: flex;
+  gap: 20px;
+  height: 639px;
+  justify-content: flex-end;
+  position: relative;
+  width: 996px;
+}
+
+.section-4 .product-content .product-frame {
+  position: absolute;
+  z-index: 30;
+}
+
+.gradient-border {
+  height: 100%;
+  width: 100%;
+}
+
+.section-4 .product-content #console {
+  bottom: -90px;
+  left: -200px;
+  transform: scale(0.9);
+}
+
+.section-4 .product-content #controller {
+  right: -200px;
+  transform: scale(0.9);
+}
+
+.section-4 .product-content .product-info {
+  align-self: start;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 100px;
+  position: relative;
+  width: 60%;
+  z-index: 30;
+}
+
+.section-4 .product-info h1 {
+  font-family: var(--ft-raleway);
+  font-size: 4.375rem;
+  font-weight: 900;
+}
+
+.section-4 .product-info p:nth-child(2) {
+  font-family: var(--ft-raleway);
+  font-size: 1.6875rem;
+  font-weight: 700;
+}
+
+.section-4 .product-info p:nth-child(3) {
+  font-family: var(--ft-lato);
+  font-size: 1.25rem;
+  font-weight: 500;
+  width: 70%;
+}
+
+.section-4 .product-info p:nth-child(4) {
+  font-family: var(--ft-lato);
+  font-size: 1.25rem;
+  font-weight: 500;
+  width: 70%;
+}
+
+.section-4 .product-info ul {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--ft-lato);
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.section-4 .product-info ul li {
+  align-items: center;
+  display: flex;
+  list-style: none;
+  margin-left: -25px;
+}
+
+
+.product-console-elipse {
+  bottom: -200px;
+  height: 395px;
+  left: -300px;
+  position: absolute;
+  transform: rotate(90deg);
+  width: 692px;
+  z-index: 20;
+}
+
+.product-controller-elipse {
+  height: 288px;
+  position: absolute;
+  right: -300px;
+  transform: rotate(-50.25deg);
+  width: 352px;
+  z-index: 20;
+}
